@@ -1,0 +1,29 @@
+/* Projects page layout */
+.projectsPage {
+  padding: var(--spacing-xxl) var(--spacing-lg);
+  background-color: var(--color-background);
+}
+
+.projectsPage h1 {
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+}
+
+/* Responsive card grid */
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: var(--spacing-xl);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .projectsPage {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  .projectsGrid {
+    grid-template-columns: 1fr;
+  }
+}

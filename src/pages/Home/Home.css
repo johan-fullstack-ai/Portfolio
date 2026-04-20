@@ -1,0 +1,111 @@
+/* Hero section with a soft gradient background */
+.hero {
+  background: linear-gradient(135deg, #E0E4E7 0%, #FFFFFF 100%);
+  padding: var(--spacing-xxl) var(--spacing-lg);
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+}
+
+.heroContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xxl);
+  width: 100%;
+}
+
+/* Left text block */
+.heroText {
+  flex: 2;
+}
+
+.heroName {
+  font-size: 4rem;
+  color: var(--color-navy);
+  margin-bottom: var(--spacing-sm);
+}
+
+.heroTagline {
+  font-size: 1.25rem;
+  color: var(--color-slate-blue);
+  margin-bottom: var(--spacing-lg);
+}
+
+.heroButtons {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+/* Shared CTA base */
+.btnPrimary,
+.btnSecondary {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  background-color: transparent;
+  color: var(--color-navy);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  border-radius: var(--radius-button);
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+/* Hover — identical for both */
+.btnPrimary:hover,
+.btnSecondary:hover {
+  background-color: var(--color-warm-gold);
+  color: var(--color-navy);
+  transform: translateY(-2px);
+}
+
+/* Active state (optional but nice) */
+.btnPrimary:active,
+.btnSecondary:active {
+  background-color: var(--color-warm-gold-dark);
+  transform: translateY(-1px);
+}
+
+/* Right-side laptop image */
+.heroImage {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.heroImage img {
+  max-width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+}
+
+/* Mobile: stack vertically, center everything */
+@media (max-width: 768px) {
+  .hero {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  .heroContent {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .heroName {
+    font-size: 2.5rem;
+  }
+
+  .heroButtons {
+    justify-content: center;
+  }
+
+  .heroImage {
+    justify-content: center;
+  }
+
+  .heroImage img {
+    max-height: 280px;
+  }
+}

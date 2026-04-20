@@ -1,0 +1,32 @@
+/* About page layout */
+.aboutPage {
+  padding: var(--spacing-xxl) var(--spacing-lg);
+  background-color: var(--color-background);
+}
+
+.aboutContainer {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.aboutContainer h1 {
+  margin-bottom: var(--spacing-xl);
+}
+
+/* Spaced paragraphs */
+.aboutText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.aboutText p {
+  color: var(--color-navy);
+  font-size: 1.05rem;
+}
+
+@media (max-width: 768px) {
+  .aboutPage {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+}

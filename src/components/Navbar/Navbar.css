@@ -1,0 +1,143 @@
+/* Sticky top navigation bar */
+.navbar {
+  background-color: var(--color-navy);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.navContainer {
+  position: relative; /* Makes sure the absolute positioning of the logo works correctly */
+  display: flex;
+  justify-content: center; /* centers the nav */
+  align-items: center; /* vertically centers the nav */
+  max-width: 1200px;
+  margin: 0 auto; /* auto left and right margins to center the container */
+  height: 64px; /* height of the navbar */
+}
+
+/* Left section holds the logo */
+.navLeft {
+  position: absolute; /* Takes it out of the flex flow, so it doesn't affect the centering of the nav links */
+  left: 0;
+  top: 50%; /* Moves the top of the element to 50% of the parent's height */
+  transform: translateY(-50%);  /* Moves the element up by 50% of its own height so that the center is in the center of the parent */ 
+}
+
+/* Center section holds the nav links */
+.navLinks {
+  display: flex; /* a must have even though parent has it */
+  gap: var(--spacing-lg);
+  list-style: none; /* Removes the bullets from the list */
+  margin: 0;
+  padding: 0;
+}
+
+/* Individual nav link styling */
+.navLink {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--color-soft-gray);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-button);
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.navLink:hover {
+  color: var(--color-warm-gold);
+}
+
+/* Active page indicator */
+.navLink.active {
+  color: var(--color-warm-gold);
+  background-color: rgba(244, 211, 94, 0.1);
+}
+
+/* ===========================
+   Hamburger button — hidden on desktop
+   =========================== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 110;
+}
+
+.hamburgerBar {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background-color: var(--color-soft-gray);
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Animate bars into an X when open */
+.hamburger.open .hamburgerBar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.open .hamburgerBar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open .hamburgerBar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ===========================
+   Mobile layout
+   =========================== */
+@media (max-width: 768px) {
+  .navContainer {
+    height: 56px;
+  }
+
+  /* Show hamburger on mobile */
+  .hamburger {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /* Hide nav links by default, show as a dropdown when open */
+  .navLinks {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--color-navy);
+    padding: var(--spacing-sm) 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 var(--radius-card) var(--radius-card);
+    gap: 0;
+    z-index: 105;
+  }
+
+  .navLinks.navLinksOpen {
+    display: flex;
+  }
+
+  .navLink {
+    display: block;
+    text-align: center;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    width: 100%;
+  }
+
+  .navLink:hover {
+    background-color: rgba(244, 211, 94, 0.05);
+  }
+}

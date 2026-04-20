@@ -1,0 +1,45 @@
+/* ===========================
+   Design tokens and CSS variables
+   =========================== */
+:root {
+  /* Primary palette */
+  --color-navy: #0D1B2A;
+  --color-steel-blue: #1B263B;
+  --color-slate-blue: #415A77;
+
+  /* Accent colors */
+  --color-soft-gray: #E0E1DD;
+  /* --color-warm-gold: #F4D35E; */
+  --color-warm-gold: #F4C542;
+
+  /* Usage colors */
+  --color-background: #E0E4E7;
+  --color-white: #FFFFFF;
+  --color-text: #0D1B2A;
+  --color-card-bg: #1B263B;
+  --color-card-text: #FFFFFF;
+  --color-dark-grey: #1A1A1A;
+  --color-green: #166928;
+
+
+
+  /* Shadows */
+  --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-button: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  /* Border radius */
+  --radius-card: 12px;
+  --radius-button: 8px;
+
+  /* Typography */
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Spacing scale */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-xxl: 5rem;
+}

@@ -1,0 +1,136 @@
+/* Project card container */
+.projectCard {
+  background-color: var(--color-card-bg);
+  color: var(--color-card-text);
+  border-radius: var(--radius-card);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-card);
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+/* Hover: slight lift and gold accent border */
+.projectCard:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-warm-gold);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.cardTitle {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: var(--color-white);
+}
+
+/* Image wrapper clips rounded corners */
+.cardImageWrapper {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.cardImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 576 / 768;
+}
+
+.cardDescription {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* Tech stack tag row */
+.cardTech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  align-items: center;
+}
+
+.techLabel {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--color-soft-gray);
+}
+
+.techTag {
+  font-size: 0.8rem;
+  padding: 0.2rem 0.6rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  color: var(--color-soft-gray);
+}
+
+/* Video player container */
+.cardVideoWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: var(--spacing-xs);
+}
+
+/* Button row at the bottom of the card */
+.cardActions {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-top: auto;
+  padding-top: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+/* Filled accent button */
+.cardBtnFilled {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.2rem;
+  background-color: var(--color-warm-gold);
+  color: var(--color-navy);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: var(--radius-button);
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.cardBtnFilled:hover {
+  background-color: #e3c84d;
+  transform: translateY(-2px);
+}
+
+/* Outline button */
+.cardBtnOutline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.2rem;
+  background-color: transparent;
+  color: var(--color-slate-blue);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 2px solid var(--color-slate-blue);
+  border-radius: var(--radius-button);
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.cardBtnOutline:hover {
+  background-color: var(--color-slate-blue);
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .cardActions {
+    flex-direction: column;
+  }
+}
