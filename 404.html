@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+
+<head>
+    <!-- prevent indexing -->
+    <meta name="robots" content="noindex" />
+</head>
+
+<body>
+    <script>
+        // save original URL
+        var original = location.pathname + location.search + location.hash;
+
+        // load index.html content
+        fetch('./index.html')
+        .then(function (r) { return r.text(); })
+        .then(function (html) {
+            document.open();
+            document.write(html);
+            // restore original URL so BrowserRouter can match it
+            history.replaceState(null, '', original);
+            document.close();
+        })
+        .catch(function () {
+            // fallback
+            location.replace('./index.html');
+        });
+    </script>
+</body>
+
+</html>
