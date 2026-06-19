@@ -2,6 +2,7 @@ import ProjectCard from '../../components/ProjectCard/ProjectCard'
 import todolyImg from '../../assets/todoly.png'
 import reactCakeryImg from '../../assets/reactCakery.jpg'
 import CineScopeImg from '../../assets/CineScope.jpg'
+import perfumeImg from '../../assets/perfume.jpg'
 import './Projects.css'
 
 /* Base URL for assets in the public folder (respects Vite base config) */
@@ -49,6 +50,19 @@ const projectData = [
       url: demo2Url,
     },
     github: 'https://github.com/johan-fullstack-ai/CineScope',
+  },
+  {
+    id: 4,
+    title: 'Perfume',
+    image: perfumeImg,
+    description:
+      'An e-commerce site for exclusive parfumes in two parts, backend and frontend, where Stripe payment service is used as test-payment.',
+    tech: ['C#/.NET Web API', 'SQL Server + EF Core 10', 'React + Vite', 'Stripe', 'Azure', 'GitHub Pages', 'CORS'],
+    demo: {
+      type: 'external',
+      url: 'https://johan-fullstack-ai.github.io/perfume',
+    },
+    github: 'https://github.com/johan-fullstack-ai/PerfumeAPI',
   },
 ]
 
